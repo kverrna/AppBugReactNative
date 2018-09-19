@@ -1,14 +1,15 @@
 import React from 'react';
-import {View,Text} from 'react-native';
+import {View,Text, Button,Alert} from 'react-native';
 import SideMenu  from '../components/Menu/SideMenu';
 
-const PaginaA = ()=>
+const PaginaA = (props)=>
 {
  return(
 
- <SideMenu>
+ <SideMenu navigation={props.navigation}>
  <View style={{margin:30}}>
      <Text>Pagina A</Text>
+     <Button title="Ir para B" onPress={()=>{props.navigation.navigate('PaginaBPage');}}/>
  </View>
  </SideMenu>
  

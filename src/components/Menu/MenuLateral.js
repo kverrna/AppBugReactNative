@@ -85,6 +85,11 @@ class MenuLateral extends React.Component {
     this.carregaOpcoesMenu.bind();
   }
 
+  navegacao(pagina)
+  {
+    this.props.navigation.navigate(pagina);
+    this.props.drawer.close();
+  }
   carregaOpcoesMenu() {
     const { temUsuario, usuarioLogado, navigation } = this.props;
     const menuPublic = [
@@ -125,7 +130,7 @@ class MenuLateral extends React.Component {
         <View style={styles.imgBackContainer}>
           
         </View>
-        <TouchableOpacity onPress={() => { this.props.navigation.navigate('PaginaB'); }}>
+        <TouchableOpacity onPress={() => { this.navegacao('PaginaBPage') }}>
           <Text>NAVEGAR</Text>
         </TouchableOpacity>
         <FlatList

@@ -1,6 +1,6 @@
 import React from 'react';
 import Drawer from 'react-native-drawer';
-import { View, Text } from 'react-native';
+import { View, Text,Alert } from 'react-native';
 import {
   Header, Left, Body, Right, Button, Icon, Title,
 } from 'native-base';
@@ -15,9 +15,12 @@ export default class SideMenu extends React.Component {
   }
 
   renderMenus() {
-    return (<Menulateral />);
+    return (<Menulateral navigation={this.props.navigation} drawer={this._drawer} />);
   }
-
+ navegacao()
+ {
+  this.props.navigation.navigate('PaginaBPage');
+ }
   render() {
     const closeDrawer = () => {
       this._drawer.close();
@@ -44,7 +47,11 @@ export default class SideMenu extends React.Component {
           <Body>
             <Title>App Bug</Title>
           </Body>
-          <Right />
+          <Right >
+          <Button transparent onPress={() =>this.navegacao()}>
+              <Icon name="menu" />
+            </Button>
+          </Right>
         </Header>
         <View style={{ flex: 1 }}>
           {this.props.children}

@@ -7,10 +7,14 @@ import {
 
   import PaginaAPage from '../page/PaginaA';
   import PaginaBPage from '../page/PaginaB';
-  
+  import MenuLateralComponent from '../components/Menu/MenuLateral';
+  import SideMenuComponent from '../components/Menu/SideMenu';
+
   const Stack = createStackNavigator({
     PaginaAPage,
-    PaginaBPage
+    PaginaBPage,
+    MenuLateralComponent,
+    SideMenuComponent,
   },
   {
     navigationOptions:
@@ -21,7 +25,9 @@ import {
 
   const ToolBar = createBottomTabNavigator({
     PaginaAPage,
-    PaginaBPage
+    PaginaBPage,
+    MenuLateralComponent,
+    SideMenuComponent,
   },
   {
     navigationOptions: ({ navigation }) => ({
